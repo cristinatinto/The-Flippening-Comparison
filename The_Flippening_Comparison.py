@@ -84,12 +84,12 @@ with st.expander("Check the analysis"):
         st.altair_chart(alt.Chart(df)
         .mark_bar()
         .encode(x='day:N', y='total_txs:Q',color='platform')
-        .properties(title='Daily transactions by platform'))
+        .properties(title='Daily transactions by platform',width=500))
     
     col2.altair_chart(alt.Chart(df)
         .mark_line()
         .encode(x='day:N', y='avg_txs:Q',color='platform')
-        .properties(title='Daily average transactions per platform'))
+        .properties(title='Daily average transactions per platform',width=500))
 
 
     sql="""
@@ -156,34 +156,34 @@ with st.expander("Check the analysis"):
         st.altair_chart(alt.Chart(df)
         .mark_line()
         .encode(x='date:N', y='users:Q',color='platform')
-        .properties(title='Daily active users by platform'))
+        .properties(title='Daily active users by platform',width=500))
         
     col2.altair_chart(alt.Chart(df)
         .mark_line()
         .encode(x='date:N', y='total_users:Q',color='platform')
-        .properties(title='Total active users by platform'))
+        .properties(title='Total active users by platform',width=500))
     
     with col1:
         st.altair_chart(alt.Chart(df)
         .mark_area()
         .encode(x='date:N', y='volume:Q',color='platform')
-        .properties(title='Daily volume transacted by platform'))
+        .properties(title='Daily volume transacted by platform',width=500))
     
     col2.altair_chart(alt.Chart(df)
         .mark_area()
         .encode(x='date:N', y='total_volume:Q',color='platform')
-        .properties(title='Total volume transacted by platform'))
+        .properties(title='Total volume transacted by platform',width=500))
     
     with col1:
         st.altair_chart(alt.Chart(df)
         .mark_line()
         .encode(x='date:N', y='avg_fees:Q',color='platform')
-        .properties(title='Daily average transaction fee by platform'))
+        .properties(title='Daily average transaction fee by platform',width=500))
     
     col2.altair_chart(alt.Chart(df)
         .mark_line()
         .encode(x='date:N', y='total_fees:Q',color='platform')
-        .properties(title='Total fees by platform'))
+        .properties(title='Total fees by platform',width=500))
 
 
 
