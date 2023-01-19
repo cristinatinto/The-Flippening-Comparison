@@ -88,7 +88,7 @@ with st.expander("Check the analysis"):
     
     col2.altair_chart(alt.Chart(df)
         .mark_line()
-        .encode(x='day:N', y='price_usd:Q',color='platform')
+        .encode(x='day:N', y='avg_txs:Q',color='platform')
         .properties(title='Daily average transactions per platform'))
 
 
@@ -171,7 +171,7 @@ with st.expander("Check the analysis"):
     
     col2.altair_chart(alt.Chart(df)
         .mark_area()
-        .encode(x='date:N', y='volume:Q',color='platform')
+        .encode(x='date:N', y='total_volume:Q',color='platform')
         .properties(title='Total volume transacted by platform'))
     
     with col1:
@@ -356,22 +356,22 @@ with st.expander("Check the analysis"):
     st.altair_chart(alt.Chart(df)
     .mark_line()
     .encode(x='day:N', y='swaps:Q',color='platform')
-    .properties(title='Daily swaps by platform'))
+    .properties(title='Daily swaps by platform',width=1000))
     
     st.altair_chart(alt.Chart(df)
     .mark_line()
     .encode(x='day:N', y='users:Q',color='platform')
-    .properties(title='Daily swappers by platform'))
+    .properties(title='Daily swappers by platform',width=1000))
     
     st.altair_chart(alt.Chart(df)
     .mark_line()
     .encode(x='day:N', y='volume_usd:Q',color='platform')
-    .properties(title='Daily volume swapped (USD) by platform'))
+    .properties(title='Daily volume swapped (USD) by platform',width=1000))
     
     st.altair_chart(alt.Chart(df)
     .mark_line()
     .encode(x='day:N', y='users:Q',color='platform')
-    .properties(title='Daily average volume (USD) by platform'))
+    .properties(title='Daily average volume (USD) by platform',width=1000))
 
 
 
@@ -552,7 +552,7 @@ date_trunc('day',BLOCK_TIMESTAMP) AS day,
 sum(amount_usd) AS volume,
 count(distinct tx_hash) AS unique_bridges,
 avg(amount_usd) AS average_bridged_amount
-from tb where date_trunc('day',BLOCK_TIMESTAMP) >='2023-01-01' and destchain='optimism'
+from tb where date_trunc('day',BLOCK_TIMESTAMP) >=current_date-INTERVAL '3 MONTHS' and destchain='optimism'
 group by 1
 ),
 
@@ -703,7 +703,7 @@ group by 1
  count(tx_hash) as unique_bridges,
  sum(amount_weth) as volumes,
      avg(amount_weth) AS average_bridged_amounts
-     from bridge_wrapper where block_timestamp>='2023-01-01'
+     from bridge_wrapper where block_timestamp>=current_date-INTERVAL '3 MONTHS'
 --     and src_chain_id='Ethereum'
      group by 1
   ),
@@ -727,17 +727,17 @@ with st.expander("Check the analysis"):
     st.altair_chart(alt.Chart(df)
     .mark_line()
     .encode(x='day:N', y='volume:Q',color='platform')
-    .properties(title='Daily volume bridged (USD) by platform'))
+    .properties(title='Daily volume bridged (USD) by platform',width=1000))
     
     st.altair_chart(alt.Chart(df)
     .mark_line()
     .encode(x='day:N', y='unique_bridges:Q',color='platform')
-    .properties(title='Daily bridges by platform'))
+    .properties(title='Daily bridges by platform',width=1000))
     
     st.altair_chart(alt.Chart(df)
     .mark_line()
     .encode(x='day:N', y='average_bridged_amount:Q',color='platform')
-    .properties(title='Daily average volume bridged (USD) by platform'))
+    .properties(title='Daily average volume bridged (USD) by platform',width=1000))
     
 
 
