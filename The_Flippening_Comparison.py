@@ -377,7 +377,12 @@ with st.expander("Check the analysis"):
 
 # In[20]:
 
-
+st.write('')
+st.markdown('First of all we can see that during the last three months we can see that the two platforms have had a fairly stable daily transactions but always with an upward trend. Both have had a rise in January. Arbitrum has a higher transaction total than Optimism.')
+st.markdown('If we look at the daily active users we can see that Optimism has had an upward trend, while Arbitrum has had the opposite. At the end of December Optimism overtook Arbitrum in the number of active users.')
+st.markdown('In the daily volume transacted we see that Arbitrum has a higher total volume than Optimism. Even so, they have very similar trends, when one goes up, so does the other.')
+st.markdown('Finally, we can see that in the number of swappers, Optimism outperformed Arbitrum at the end of December. The two platforms have very similar figures in terms of volume swapped.')
+st.write('')
 st.subheader("2. Bridges on Optimism vs Arbitrum")
 st.markdown('**Methods:**')
 st.write('In this analysis we will focus on Optimism and Arbitrum bridges. More specifically, we will analyze the following data:')
@@ -743,7 +748,10 @@ with st.expander("Check the analysis"):
 
 # In[21]:
 
-
+st.write('')
+st.markdown('If we look at the daily volume bridged we see that the Optimism platform has more ups and downs. Arbitrum, on the other hand, has a more stable volume bridged. They have very similar values. In the bridges we see that Arbitrum increased dramatically in mid-November but then dropped sharply and now Optimism and Arbitrum have the same values. Finally, in the average volume bridged, we can see that in the first month, Optimism had higher values than the other platform. Even so, it has shown much more ups and downs. Arbitrum has remained stable over the three months. They have similar values although Ooptimism has a slightly higher average volume bridged.  ')
+st.markdown('')
+st.write('')
 st.subheader("3. User profile comparison")
 st.markdown('**Methods:**')
 st.write('In this analysis we will focus on Optimism and Arbitrum user profile. More specifically, we will analyze the following data:')
@@ -962,6 +970,14 @@ with st.expander("Check the analysis"):
     .encode(x='status:N', y='counts:Q',color=alt.Color('type', scale=alt.Scale(scheme='dark2')))
     .properties(title='Distribution of transactions by sector on Arbitrum',width=500))
 
+st.write('')
+st.markdown('Finally, we have analysed the user profile comparison. In Optimism, in the number of transactions by actions we see that Other is the most used option, just like in the Arbitrum platform. In the number of transactions by sector we see that in Optimism Layer2 is the most used, while in Arbitrum Dex and Layer2 are the most used. ')
+st.write('')
+st.subheader('Conclusions')
+st.markdown('During the last three months we can see that the two platforms have had a fairly stable daily transactions but always with an upward trend. Both have had a rise in January. Arbitrum has a higher transaction total than Optimism. The daily active users we can see that Optimism has had an upward trend, while Arbitrum has had the opposite. At the end of December Optimism overtook Arbitrum in the number of active users. In the daily volume transacted we see that Arbitrum has a higher total volume than Optimism. Even so, they have very similar trends, when one goes up, so does the other. Finally, we can see that in the number of swappers, Optimism outperformed Arbitrum at the end of December. The two platforms have very similar figures in terms of volume swapped.')
+st.markdown('If we look at the daily volume bridged we see that the Optimism platform has more ups and downs. Arbitrum, on the other hand, has a more stable volume bridged. They have very similar values. In the bridges we see that Arbitrum increased dramatically in mid-November but then dropped sharply and now Optimism and Arbitrum have the same values. Finally, in the average volume bridged, we can see that in the first month, Optimism had higher values than the other platform. Even so, it has shown much more ups and downs. Arbitrum has remained stable over the three months. They have similar values although Ooptimism has a slightly higher average volume bridged.  ')
+st.markdown('Finally, we have analysed the user profile comparison. In Optimism, in the number of transactions by actions we see that Other is the most used option, just like in the Arbitrum platform. In the number of transactions by sector we see that in Optimism Layer2 is the most used, while in Arbitrum Dex and Layer2 are the most used.')
+st.write('')
 
 st.markdown('This dashboard has been done by _Cristina Tintó_ powered by **Flipside Crypto** data and carried out for **MetricsDAO**.')
 st.markdown('All the codes can be found in [Github](https://github.com/cristinatinto/The-Flippening-Comparison)')
