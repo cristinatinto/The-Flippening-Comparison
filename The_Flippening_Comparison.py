@@ -74,6 +74,8 @@ GROUP by 1
 )
 select 'Optimism' as platform,* from t1 union select 'Arbitrum' as platform,* from t2
 """
+
+@st.cache
 results = sdk.query(sql)
 df = pd.DataFrame(results.records)
 df.info()
@@ -147,7 +149,7 @@ with st.expander("Check the analysis"):
     select 'Optimism' as platform,* from t1 union select 'Arbitrum' as platform,* from t2
 
     """
-
+@st.cache
     results = sdk.query(sql)
     df = pd.DataFrame(results.records)
     df.info()
@@ -348,7 +350,7 @@ with st.expander("Check the analysis"):
     )
     select 'Optimism' as platform,* from optimism union select 'Arbitrum' as platform,* from arbitrum
     """
-
+@st.cache
     results = sdk.query(sql)
     df = pd.DataFrame(results.records)
     df.info()
@@ -723,7 +725,7 @@ group by 1
  )
   select 'Optimism' as platform,* from optimism union select 'Arbitrum' as platform,* from arbitrum
 """
-
+@st.cache
 results = sdk.query(sql)
 df = pd.DataFrame(results.records)
 df.info()
@@ -812,7 +814,7 @@ GROUP BY 1,2
 )
 select * from arbitrum
 """
-
+@st.cache
 results = sdk.query(sql)
 df = pd.DataFrame(results.records)
 df.info()
@@ -871,7 +873,7 @@ with st.expander("Check the analysis"):
     )
     select * from arbitrum
     """
-
+@st.cache
     results = sdk.query(sql)
     df = pd.DataFrame(results.records)
     df.info()
@@ -949,7 +951,7 @@ with st.expander("Check the analysis"):
     GROUP BY 1,2
     ORDER by 1
     """
-
+@st.cache
     results = sdk.query(sql)
     df = pd.DataFrame(results.records)
     df.info()
