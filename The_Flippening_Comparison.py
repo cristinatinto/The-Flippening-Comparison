@@ -76,7 +76,10 @@ select 'Optimism' as platform,* from t1 union select 'Arbitrum' as platform,* fr
 """
 
 @st.cache
-results = sdk.query(sql)
+def loading(a):
+    results=sdk.query(a)
+    return results
+results = sdk.loading(sql)
 df = pd.DataFrame(results.records)
 df.info()
 
@@ -150,9 +153,12 @@ with st.expander("Check the analysis"):
 
     """
 @st.cache
-    results = sdk.query(sql)
-    df = pd.DataFrame(results.records)
-    df.info()
+def loading(a):
+    results=sdk.query(a)
+    return results
+results = sdk.loading(sql)
+df = pd.DataFrame(results.records)
+df.info()
 
     with col1:
         st.altair_chart(alt.Chart(df)
@@ -351,9 +357,12 @@ with st.expander("Check the analysis"):
     select 'Optimism' as platform,* from optimism union select 'Arbitrum' as platform,* from arbitrum
     """
 @st.cache
-    results = sdk.query(sql)
-    df = pd.DataFrame(results.records)
-    df.info()
+def loading(a):
+    results=sdk.query(a)
+    return results
+results = sdk.loading(sql)
+df = pd.DataFrame(results.records)
+df.info()
 
     st.altair_chart(alt.Chart(df)
     .mark_line()
@@ -726,7 +735,10 @@ group by 1
   select 'Optimism' as platform,* from optimism union select 'Arbitrum' as platform,* from arbitrum
 """
 @st.cache
-results = sdk.query(sql)
+def loading(a):
+    results=sdk.query(a)
+    return results
+results = sdk.loading(sql)
 df = pd.DataFrame(results.records)
 df.info()
 
@@ -815,11 +827,14 @@ GROUP BY 1,2
 select * from arbitrum
 """
 @st.cache
-results = sdk.query(sql)
+def loading(a):
+    results=sdk.query(a)
+    return results
+results = sdk.loading(sql)
 df = pd.DataFrame(results.records)
 df.info()
 
-results2 = sdk.query(sql2)
+results2 = sdk.loading(sql2)
 df2 = pd.DataFrame(results2.records)
 df2.info()
 
@@ -874,11 +889,14 @@ with st.expander("Check the analysis"):
     select * from arbitrum
     """
 @st.cache
-    results = sdk.query(sql)
-    df = pd.DataFrame(results.records)
-    df.info()
+def loading(a):
+    results=sdk.query(a)
+    return results
+results = sdk.loading(sql)
+df = pd.DataFrame(results.records)
+df.info()
     
-    results2 = sdk.query(sql2)
+    results2 = sdk.loading(sql2)
     df2 = pd.DataFrame(results2.records)
     df2.info()
 
@@ -952,11 +970,14 @@ with st.expander("Check the analysis"):
     ORDER by 1
     """
 @st.cache
-    results = sdk.query(sql)
-    df = pd.DataFrame(results.records)
-    df.info()
+def loading(a):
+    results=sdk.query(a)
+    return results
+results = sdk.loading(sql)
+df = pd.DataFrame(results.records)
+df.info()
     
-    results2 = sdk.query(sql2)
+    results2 = sdk.loading(sql2)
     df2 = pd.DataFrame(results2.records)
     df2.info()
 
