@@ -79,7 +79,7 @@ select 'Optimism' as platform,* from t1 union select 'Arbitrum' as platform,* fr
 def loading(a):
     results=sdk.query(a)
     return results
-results = sdk.loading(sql)
+results = loading(sql)
 df = pd.DataFrame(results.records)
 df.info()
 
@@ -156,7 +156,7 @@ with st.expander("Check the analysis"):
     def loading(a):
         results=sdk.query(a)
         return results
-    results = sdk.loading(sql)
+    results = loading(sql)
     df = pd.DataFrame(results.records)
     df.info()
 
@@ -360,7 +360,7 @@ with st.expander("Check the analysis"):
     def loading(a):
         results=sdk.query(a)
         return results
-    results = sdk.loading(sql)
+    results = loading(sql)
     df = pd.DataFrame(results.records)
     df.info()
 
@@ -738,7 +738,7 @@ group by 1
 def loading(a):
     results=sdk.query(a)
     return results
-results = sdk.loading(sql)
+results = loading(sql)
 df = pd.DataFrame(results.records)
 df.info()
 
@@ -830,11 +830,11 @@ select * from arbitrum
 def loading(a):
     results=sdk.query(a)
     return results
-results = sdk.loading(sql)
+results = loading(sql)
 df = pd.DataFrame(results.records)
 df.info()
 
-results2 = sdk.loading(sql2)
+results2 = loading(sql2)
 df2 = pd.DataFrame(results2.records)
 df2.info()
 
@@ -892,11 +892,11 @@ with st.expander("Check the analysis"):
     def loading(a):
         results=sdk.query(a)
         return results
-    results = sdk.loading(sql)
+    results = loading(sql)
     df = pd.DataFrame(results.records)
     df.info()
     
-    results2 = sdk.loading(sql2)
+    results2 = loading(sql2)
     df2 = pd.DataFrame(results2.records)
     df2.info()
 
@@ -973,11 +973,11 @@ with st.expander("Check the analysis"):
     def loading(a):
         results=sdk.query(a)
         return results
-    results = sdk.loading(sql)
+    results = loading(sql)
     df = pd.DataFrame(results.records)
     df.info()
     
-    results2 = sdk.loading(sql2)
+    results2 = loading(sql2)
     df2 = pd.DataFrame(results2.records)
     df2.info()
 
