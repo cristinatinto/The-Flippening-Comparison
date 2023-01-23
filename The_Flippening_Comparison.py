@@ -155,7 +155,7 @@ with st.expander("Check the analysis"):
     @st.cache
     def loading(a):
         results=sdk.query(a)
-	return results
+    return results
     results = sdk.loading(sql)
     df = pd.DataFrame(results.records)
     df.info()
