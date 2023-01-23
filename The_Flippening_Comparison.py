@@ -152,13 +152,13 @@ with st.expander("Check the analysis"):
     select 'Optimism' as platform,* from t1 union select 'Arbitrum' as platform,* from t2
 
     """
-@st.cache
-def loading(a):
+    @st.cache
+    def loading(a):
     results=sdk.query(a)
-    return results
-results = sdk.loading(sql)
-df = pd.DataFrame(results.records)
-df.info()
+	return results
+	results = sdk.loading(sql)
+    df = pd.DataFrame(results.records)
+    df.info()
 
     with col1:
         st.altair_chart(alt.Chart(df)
@@ -356,13 +356,13 @@ df.info()
     )
     select 'Optimism' as platform,* from optimism union select 'Arbitrum' as platform,* from arbitrum
     """
-@st.cache
-def loading(a):
-    results=sdk.query(a)
-    return results
-results = sdk.loading(sql)
-df = pd.DataFrame(results.records)
-df.info()
+    @st.cache
+    def loading(a):
+        results=sdk.query(a)
+        return results
+    results = sdk.loading(sql)
+    df = pd.DataFrame(results.records)
+    df.info()
 
     st.altair_chart(alt.Chart(df)
     .mark_line()
@@ -888,13 +888,13 @@ with st.expander("Check the analysis"):
     )
     select * from arbitrum
     """
-@st.cache
-def loading(a):
-    results=sdk.query(a)
-    return results
-results = sdk.loading(sql)
-df = pd.DataFrame(results.records)
-df.info()
+    @st.cache
+    def loading(a):
+        results=sdk.query(a)
+        return results
+    results = sdk.loading(sql)
+    df = pd.DataFrame(results.records)
+    df.info()
     
     results2 = sdk.loading(sql2)
     df2 = pd.DataFrame(results2.records)
@@ -969,13 +969,13 @@ df.info()
     GROUP BY 1,2
     ORDER by 1
     """
-@st.cache
-def loading(a):
-    results=sdk.query(a)
-    return results
-results = sdk.loading(sql)
-df = pd.DataFrame(results.records)
-df.info()
+    @st.cache
+    def loading(a):
+        results=sdk.query(a)
+        return results
+    results = sdk.loading(sql)
+    df = pd.DataFrame(results.records)
+    df.info()
     
     results2 = sdk.loading(sql2)
     df2 = pd.DataFrame(results2.records)
